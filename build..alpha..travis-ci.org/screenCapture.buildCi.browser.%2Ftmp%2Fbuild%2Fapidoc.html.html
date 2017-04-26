@@ -1,0 +1,917 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/kof/node-qunit#readme">qunit (v1.0.0)</a>
+</h1>
+<h4>QUnit testing framework for Node.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.qunit">module qunit</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.run">
+            function <span class="apidocSignatureSpan">qunit.</span>run
+            <span class="apidocSignatureSpan">(files, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.setup">
+            function <span class="apidocSignatureSpan">qunit.</span>setup
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">qunit.</span>generators</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">qunit.</span>index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">qunit.</span>log</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">qunit.</span>log.print</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">qunit.</span>options</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.qunit.generators">module qunit.generators</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">qunit.generators.</span>support</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.generators.isGeneratorFn">
+            function <span class="apidocSignatureSpan">qunit.generators.</span>isGeneratorFn
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.qunit.index">module qunit.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.index.run">
+            function <span class="apidocSignatureSpan">qunit.index.</span>run
+            <span class="apidocSignatureSpan">(files, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.index.setup">
+            function <span class="apidocSignatureSpan">qunit.index.</span>setup
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">qunit.index.</span>log</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">qunit.index.</span>options</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.qunit.log">module qunit.log</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.add">
+            function <span class="apidocSignatureSpan">qunit.log.</span>add
+            <span class="apidocSignatureSpan">(type, obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.reset">
+            function <span class="apidocSignatureSpan">qunit.log.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.stats">
+            function <span class="apidocSignatureSpan">qunit.log.</span>stats
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">qunit.log.</span>print</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.qunit.log.print">module qunit.log.print</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.print.assertions">
+            function <span class="apidocSignatureSpan">qunit.log.print.</span>assertions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.print.coverage">
+            function <span class="apidocSignatureSpan">qunit.log.print.</span>coverage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.print.errors">
+            function <span class="apidocSignatureSpan">qunit.log.print.</span>errors
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.print.globalCoverage">
+            function <span class="apidocSignatureSpan">qunit.log.print.</span>globalCoverage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.print.globalSummary">
+            function <span class="apidocSignatureSpan">qunit.log.print.</span>globalSummary
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.print.summary">
+            function <span class="apidocSignatureSpan">qunit.log.print.</span>summary
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.qunit.log.print.tests">
+            function <span class="apidocSignatureSpan">qunit.log.print.</span>tests
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.qunit" id="apidoc.module.qunit">module qunit</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.run" id="apidoc.element.qunit.run">
+        function <span class="apidocSignatureSpan">qunit.</span>run
+        <span class="apidocSignatureSpan">(files, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (files, callback) {
+    var filesCount = 0;
+
+    callback || (callback = noop);
+
+    if (!Array.isArray(files)) {
+        files = [files];
+    }
+
+    if (options.coverage || files[0].coverage) coverage.setup(options.coverage);
+
+    files.forEach(function(file) {
+        var opts = _.extend({}, options, file);
+
+        !opts.log &amp;&amp; (opts.log = {});
+        opts.deps = absPaths(opts.deps);
+        opts.code = absPath(opts.code);
+        opts.tests = absPaths(opts.tests);
+
+        runOne(opts, function(err) {
+            if (err) {
+                return callback(err, log.stats());
+            }
+
+            filesCount++;
+
+            if (filesCount &gt;= files.length) {
+                _.each(opts.log, function(val, name) {
+                    if (val &amp;&amp; log.print[name]) {
+                        log.print[name]();
+                    }
+                });
+
+                // Write coverage report.
+                if (opts.coverage) coverage.report();
+                callback(null, log.stats());
+            }
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+log: {
+    summary: true
+}
+});
+
+
+// one code and tests file
+testrunner.<span class="apidocCodeKeywordSpan">run</span>({
+code: "/path/to/your/code.js",
+tests: "/path/to/your/tests.js"
+}, callback);
+
+// require code into a namespace object, rather than globally
+testrunner.run({
+code: {path: "/path/to/your/code.js", namespace: "code"},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.setup" id="apidoc.element.qunit.setup">
+        function <span class="apidocSignatureSpan">qunit.</span>setup
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setup = function (opts) {
+    _.extend(options, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+```javascript
+// change any option for all tests globally
+testrunner.options.optionName = value;
+
+// or use setup function
+testrunner.<span class="apidocCodeKeywordSpan">setup</span>({
+    log: {
+        summary: true
+    }
+});
+
+
+// one code and tests file
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.qunit.generators" id="apidoc.module.qunit.generators">module qunit.generators</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.generators.isGeneratorFn" id="apidoc.element.qunit.generators.isGeneratorFn">
+        function <span class="apidocSignatureSpan">qunit.generators.</span>isGeneratorFn
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isGeneratorFn = function (fn) {
+    return fn.constructor.name == 'GeneratorFunction';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    /**
+     * Support generators.
+     */
+    global.test = QUnit.test = function(testName, callback) {
+var fn;
+
+if (generators.<span class="apidocCodeKeywordSpan">isGeneratorFn</span>(callback)) {
+    fn = function(assert) {
+        var done = assert.async();
+        co.wrap(callback).call(this, assert).then(function() {
+            done();
+        }).catch(function (err) {
+            console.log(err.stack);
+            done();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.qunit.index" id="apidoc.module.qunit.index">module qunit.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.index.run" id="apidoc.element.qunit.index.run">
+        function <span class="apidocSignatureSpan">qunit.index.</span>run
+        <span class="apidocSignatureSpan">(files, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (files, callback) {
+    var filesCount = 0;
+
+    callback || (callback = noop);
+
+    if (!Array.isArray(files)) {
+        files = [files];
+    }
+
+    if (options.coverage || files[0].coverage) coverage.setup(options.coverage);
+
+    files.forEach(function(file) {
+        var opts = _.extend({}, options, file);
+
+        !opts.log &amp;&amp; (opts.log = {});
+        opts.deps = absPaths(opts.deps);
+        opts.code = absPath(opts.code);
+        opts.tests = absPaths(opts.tests);
+
+        runOne(opts, function(err) {
+            if (err) {
+                return callback(err, log.stats());
+            }
+
+            filesCount++;
+
+            if (filesCount &gt;= files.length) {
+                _.each(opts.log, function(val, name) {
+                    if (val &amp;&amp; log.print[name]) {
+                        log.print[name]();
+                    }
+                });
+
+                // Write coverage report.
+                if (opts.coverage) coverage.report();
+                callback(null, log.stats());
+            }
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+log: {
+    summary: true
+}
+});
+
+
+// one code and tests file
+testrunner.<span class="apidocCodeKeywordSpan">run</span>({
+code: "/path/to/your/code.js",
+tests: "/path/to/your/tests.js"
+}, callback);
+
+// require code into a namespace object, rather than globally
+testrunner.run({
+code: {path: "/path/to/your/code.js", namespace: "code"},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.index.setup" id="apidoc.element.qunit.index.setup">
+        function <span class="apidocSignatureSpan">qunit.index.</span>setup
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setup = function (opts) {
+    _.extend(options, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+```javascript
+// change any option for all tests globally
+testrunner.options.optionName = value;
+
+// or use setup function
+testrunner.<span class="apidocCodeKeywordSpan">setup</span>({
+    log: {
+        summary: true
+    }
+});
+
+
+// one code and tests file
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.qunit.log" id="apidoc.module.qunit.log">module qunit.log</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.add" id="apidoc.element.qunit.log.add">
+        function <span class="apidocSignatureSpan">qunit.log.</span>add
+        <span class="apidocSignatureSpan">(type, obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (type, obj) {
+    if (obj) {
+        data[type].push(obj);
+    }
+    return data[type];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 'ping':
+    clearTimeout(pingCheckTimeoutId);
+    pingCheckTimeoutId = setTimeout(function() {
+        complete(new Error('Process blocked for too long'));
+    }, opts.maxBlockDuration);
+    break;
+case 'assertionDone':
+    log.<span class="apidocCodeKeywordSpan">add</span>('assertions', msg.data);
+    break;
+case 'testDone':
+    log.add('tests', msg.data);
+    break;
+case 'done':
+    clearTimeout(pingCheckTimeoutId);
+    msg.data.code = opts.code.path;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.reset" id="apidoc.element.qunit.log.reset">
+        function <span class="apidocSignatureSpan">qunit.log.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+    data = {
+        assertions: [],
+        tests: [],
+        summaries: [],
+        coverages: []
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// globalCoverage: true,
+// log currently testing code file
+testing: true
+};
+
+// reset log stats every time .next is called
+chain.next = function() {
+log.<span class="apidocCodeKeywordSpan">reset</span>();
+return chainer.prototype.next.apply(this, arguments);
+};
+
+chain.add('base testrunner', function() {
+tr.run({
+    code: fixtures + '/testrunner-code.js',
+    tests: fixtures + '/testrunner-tests.js',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.stats" id="apidoc.element.qunit.log.stats">
+        function <span class="apidocSignatureSpan">qunit.log.</span>stats
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stats = function () {
+    var stats = {
+        files: 0,
+        assertions: 0,
+        failed: 0,
+        passed: 0,
+        runtime: 0
+    };
+
+    data.summaries.forEach(function(file) {
+        stats.files++;
+        stats.assertions += file.total;
+        stats.failed += file.failed;
+        stats.passed += file.passed;
+        stats.runtime += file.runtime;
+    });
+
+    stats.tests = data.tests.length;
+
+    stats.coverage = {
+        files: 0,
+        statements: { covered: 0, total: 0 },
+        branches: { covered: 0, total: 0 },
+        functions: { covered: 0, total: 0 },
+        lines: { covered: 0, total: 0 }
+    };
+
+    data.coverages.forEach(function(file) {
+        stats.coverage.files++;
+        stats.coverage.statements.covered += file.statements.covered;
+        stats.coverage.statements.total += file.statements.total;
+        stats.coverage.branches.covered += file.branches.covered;
+        stats.coverage.branches.total += file.branches.total;
+        stats.coverage.functions.covered += file.functions.covered;
+        stats.coverage.functions.total += file.functions.total;
+        stats.coverage.lines.covered += file.lines.covered;
+        stats.coverage.lines.total += file.lines.total;
+    });
+
+    return stats;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+log('\nSummary:\n' + table.toString());
+};
+
+print.globalSummary = function() {
+var table,
+    data = exports.<span class="apidocCodeKeywordSpan">stats</span>();
+
+table = new Table({
+    head: ['Files', 'Tests', 'Assertions', 'Failed', 'Passed', 'Runtime&amp;#
+x27;]
+});
+
+table.push([data.files, data.tests, data.assertions, data.failed,
+    data.passed, data.runtime]);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.qunit.log.print" id="apidoc.module.qunit.log.print">module qunit.log.print</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.print.assertions" id="apidoc.element.qunit.log.print.assertions">
+        function <span class="apidocSignatureSpan">qunit.log.print.</span>assertions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">assertions = function () {
+    var table,
+        currentModule, module,
+        currentTest, test;
+
+    table = new Table({
+        head: ['Module', 'Test', 'Assertion', 'Result']
+    });
+
+    data.assertions.forEach(function(data) {
+        // just easier to read the table
+        if (data.module === currentModule) {
+            module = '';
+        } else {
+            module = currentModule = data.module;
+        }
+
+        // just easier to read the table
+        if (data.test === currentTest) {
+            test = '';
+        } else {
+            test = currentTest = data.test;
+        }
+
+        table.push([module, test, data.message || '', data.result ? 'ok' : 'fail']);
+    });
+
+    log('\nAssertions:\n' + table.toString());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.print.coverage" id="apidoc.element.qunit.log.print.coverage">
+        function <span class="apidocSignatureSpan">qunit.log.print.</span>coverage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">coverage = function () {
+    var table;
+
+    if (!data.coverages.length) return;
+
+    table = new Table({
+        head: ['File', 'Statements', 'Branches', 'Functions', 'Lines']
+    });
+
+    data.coverages.forEach(function(coverage) {
+        table.push([
+            truncFile(coverage.code),
+            getMet(coverage.statements),
+            getMet(coverage.branches),
+            getMet(coverage.functions),
+            getMet(coverage.lines)]);
+    });
+
+    log('\nCoverage:\n' + table.toString());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.print.errors" id="apidoc.element.qunit.log.print.errors">
+        function <span class="apidocSignatureSpan">qunit.log.print.</span>errors
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errors = function () {
+    var errors = [];
+
+    data.assertions.forEach(function(data) {
+        if (!data.result) {
+            errors.push(data);
+        }
+    });
+
+    if (errors.length) {
+        log('\n\nErrors:');
+        errors.forEach(function(data) {
+            log('\nModule: ' + data.module + ' Test: ' + data.test);
+            if (data.message) {
+                log(data.message);
+            }
+
+            if (data.source) {
+                log(data.source);
+            }
+
+            if (data.expected != null || data.actual != null) {
+                //it will be an error if data.expected !== data.actual, but if they're
+                //both undefined, it means that they were just not filled out because
+                //no assertions were hit (likely due to code error that would have been logged as source or message).
+                log('Actual value:');
+                log(data.actual);
+                log('Expected value:');
+                log(data.expected);
+            }
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.print.globalCoverage" id="apidoc.element.qunit.log.print.globalCoverage">
+        function <span class="apidocSignatureSpan">qunit.log.print.</span>globalCoverage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">globalCoverage = function () {
+    var coverage, table;
+
+    if (!data.coverages.length) return;
+
+    coverage = exports.stats().coverage;
+    table = new Table({
+        head: ['Files', 'Statements', 'Branches', 'Functions', 'Lines']
+    });
+
+    table.push([
+        coverage.files,
+        getMet(coverage.statements),
+        getMet(coverage.branches),
+        getMet(coverage.functions),
+        getMet(coverage.lines)
+    ]);
+
+    log('\nGlobal coverage:\n' + table.toString());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.print.globalSummary" id="apidoc.element.qunit.log.print.globalSummary">
+        function <span class="apidocSignatureSpan">qunit.log.print.</span>globalSummary
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">globalSummary = function () {
+    var table,
+        data = exports.stats();
+
+    table = new Table({
+        head: ['Files', 'Tests', 'Assertions', 'Failed', 'Passed', 'Runtime']
+    });
+
+    table.push([data.files, data.tests, data.assertions, data.failed,
+        data.passed, data.runtime]);
+
+    log('\nGlobal summary:\n' + table.toString());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.print.summary" id="apidoc.element.qunit.log.print.summary">
+        function <span class="apidocSignatureSpan">qunit.log.print.</span>summary
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">summary = function () {
+    var table;
+
+    table = new Table({
+        head: ['File', 'Failed', 'Passed', 'Total', 'Runtime']
+    });
+
+    data.summaries.forEach(function(data) {
+        table.push([truncFile(data.code), data.failed, data.passed, data.total, data.runtime]);
+    });
+
+    log('\nSummary:\n' + table.toString());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.qunit.log.print.tests" id="apidoc.element.qunit.log.print.tests">
+        function <span class="apidocSignatureSpan">qunit.log.print.</span>tests
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tests = function () {
+    var table,
+        currentModule, module;
+
+    table = new Table({
+        head: ['Module', 'Test', 'Failed', 'Passed', 'Total']
+    });
+
+    data.tests.forEach(function(data) {
+        // just easier to read the table
+        if (data.module === currentModule) {
+            module = '';
+        } else {
+            module = currentModule = data.module;
+        }
+
+        table.push([module, data.name, data.failed, data.passed, data.total]);
+    });
+
+    log('\nTests:\n' + table.toString());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
